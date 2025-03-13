@@ -1,0 +1,30 @@
+/*Seletires css */
+h1{
+
+    text-align:center;
+    color: rgb(222, 148, 135);
+
+    
+}
+
+
+table{
+/*Largura da tabela*/
+width: 100%;
+/*Colocar uma borda*/
+border: 1px solid;
+/*Margem*/
+margin-left: px;
+}
+
+td{
+     /*Centralizar os elementos*/
+    text-align: center;
+
+}
+
+thead{
+
+    background-color: rgb(136, 135, 222);
+}
+

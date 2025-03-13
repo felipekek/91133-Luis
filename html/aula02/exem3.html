@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <title> Cadastro de Preferência</title>
+</head>
+
+<body>
+
+ <h1>Cadastro de Preferência</h1>
+
+ <form action="=/enviar" method="post">
+
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="pais">País:</label>
+    <input type="pais" id="pais" name="pais"  required><br><br>
+
+
+
+</form>
+
+    <!--Campo de Seleção(Select)-->
+    <label for="pais".Selecione seu País:>
+    <select id="pais" name="pais">
+        <option value="=brasil">Brasil</option>>
+        <option value="=portugal">Portugal</option>>
+        <option value="=espanha">Espanha</option>>
+        <option value="=outros">Outros</option>>
+    </select><br><br>
+
+    <p>Gênero:<p>
+
+    <input type="radio" id="masculino" name="genero" value="masculino">
+    <label for="masculino">Masculino</label><br>
+    <input type="radio" id="feminino" name="genero" value="felinino">
+    <label for="feminino">Feminino</label><br>
+    <input type="radio" id="outro" name="genero" value="outro">
+    <label for="outro">Outro</label><br>
+
+    <button type="submit">Enviar</button>
+
+</body>
