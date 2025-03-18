@@ -1,0 +1,82 @@
+/*Zerar as conf da pág*/
+
+*{
+    margin: 0; /*zera margem*/
+    padding: 0; /*zera espaço*/
+    box-sizing: border-box; /*zera bordas*/
+}
+
+header{
+    background-color: rgb(240, 179, 219);
+    margin: 15px;
+    padding: 30px;
+
+}
+
+ul li{
+
+    list-style: none; /*Tira as bolinhas*/
+    display: inline ;
+    padding: 8px;
+
+}
+
+a{
+  /*tira o subilinhado*/
+  text-decoration: none;
+  color: rgb(32, 16, 180);
+  font-weight: bold;
+  font-size: 24pt;
+  cursor: pointer;
+  
+}
+
+a:hover{
+
+    color: rgb(14, 85, 179);
+    text-decoration: underline;
+    padding: 12px;
+    transition: 5ms;
+}
+
+section {
+
+    margin: 50px;
+    padding: 20px;
+    
+}
+
+section h2{
+    color: rgb(75, 42, 165);
+    padding: 5px;
+    font-size: 22pt;
+}
+
+section p{
+
+    padding: 20px;
+    font-size: 18pt;
+}
+
+p{
+    background-color: rgb(243, 202, 248);
+}
+.about{
+    background-color: rgb(240, 179, 219);
+}
+
+.produty{
+    background-color: rgb(240, 179, 219);
+}
+
+.contact{
+    background-color: rgb(240, 179, 219);
+}
+
+#font-type{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
