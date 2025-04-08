@@ -1,0 +1,54 @@
+body{
+
+    height: 100vh;
+    justify-content:center;
+    flex-direction: column;
+    display: flex;
+    background-color: aliceblue;
+    align-items: center;
+    margin: 0;
+}
+
+.conteiner{
+
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    
+}
+form{
+    border: 2px solid;
+    padding: 20px;
+    background-color: white;
+    
+}
+
+.from{
+
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    
+}
+h1{
+    
+    text-align: center;
+
+}
+
+button{
+    background-color: rgb(101, 37, 161);
+    margin: 10px;
+    height: 30px;
+    margin-top: 20px;
+   
+}
+
+button:hover{
+    background-color: rgb(102, 39, 102);
+}
+
+
