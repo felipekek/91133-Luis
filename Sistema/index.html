@@ -1,28 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>Sistema</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Sistema CapProd - 1.0</h1>
-    <form action="">
+
+    <form id="loginForm">
         <div class="rotulos">
-            <label for="">Username</label>
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" required>
         </div>
-        <label for=""></label>
-        <input type="text" name = "username" id="username">
+
         <div class="rotulos">
-            <label for="">Password</label>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" required>
         </div>
-        <label for=""></label>
-        <input type="text" name="password" id=" password">
 
         <div class="bt-submit">
             <button type="submit">ENTRAR</button>
         </div>
     </form>
+
+    <script src="script.js"></script>
 </body>
 </html>

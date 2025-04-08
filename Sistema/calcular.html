@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Total</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>CapProd</h2>
+
+        <label for="produto">Produto:</label>
+        <input type="text" id="produto" placeholder="Nome">
+
+        <label for="quantidade">Quantidade:</label>
+        <input type="number" id="quantidade" placeholder="Digite a Quantidade">
+        <span id="erroQuantidade" class="erro"></span> <!-- ✅ ADICIONADO AQUI -->
+
+
+        <label for="preco">Preço unitário (R$):</label>
+        <input type="number" id="preco" placeholder="Digite o Preço" step="0.01">
+        <span id="erropreco" class="erro"></span> <!-- ✅ ADICIONADO AQUI -->
+
+
+        <label for="total">Total:</label>
+        <input type="text" id="total" readonly>
+
+        <button onclick="calcularTotal()">Calcular</button>
+    </div>
+
+    <script src="script2.js"></script>
+
+
+</body>
+</html>
