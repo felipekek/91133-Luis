@@ -20,7 +20,7 @@ body{
 }
 form{
     border: 2px solid;
-    padding: 20px;
+    padding: 80px;
     background-color: white;
     
 }
@@ -44,6 +44,7 @@ button{
     margin: 10px;
     height: 30px;
     margin-top: 20px;
+    bottom:auto;
    
 }
 
@@ -52,3 +53,7 @@ button:hover{
 }
 
 
+.input-conteiner{
+
+    
+}
