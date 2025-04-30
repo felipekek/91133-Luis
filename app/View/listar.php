@@ -58,7 +58,7 @@ include 'conecta.php';
     ?>
 
     <div class="btn-voltar">
-        <a href="http://localhost/app/cad.html"><button>Voltar ao cadastro</button></a>
+        <a href="http://localhost:8081/app/cad.html"><button>Voltar ao cadastro</button></a>
     </div>
 
 </body>

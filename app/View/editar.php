@@ -1,11 +1,12 @@
 <?php
 include 'conecta.php';
 
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    // Redireciona para a página inicial se não for acesso via POST
-    header("Location: http://localhost:8081/APP/index.html");
-    exit;
-}
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    // Pegando o ID via GET
+    if (!isset($_GET['id'])) {
+        header( "Location: listar.php");
+        exit;
+    }
 
     $id = intval($_GET['id']);
 
@@ -18,30 +19,30 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     }
 
     $produto = $resultado->fetch_assoc();
-    } elseif($_SERVE['REQUEST_METHOD'] === 'POST') {
-        //Atualizando o produto via POST
-        $id = intval($_POST['id']);
-        $nome = $_POST('produto');
-        $tipo = $_POST('tipo');
-        $quantidade = intval($_POST['quantidade']);
+} elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Atualizando o produto via POST
+    $id = intval($_POST['id']);
+    $nome = $_POST['produto'];
+    $tipo = $_POST['tipo'];
+    $quantidade = intval($_POST['quantidade']);
 
-        if (empaty($nome) || empty($tipo) || empty($quantidade)) {
-            echo "<script>alert('Todos os campos são obrigatórios!'); window.history.back();</script>";
-            exit;
-        }
-
-        $sql = "UPDATE  produtos SET produto='$nome', tipo='$tipo', quantudade=$quantidade WHERE idd=$id";
-        
-        if ($conn->querry($sql) === TRUE) {
-            echo "<script>alert(''Produto atualizado com sucesso!)"; window.location.href='listar.php';</script>;
-        } else {
-            echo "<script>alert('Erro ao atualizar o produto.')"; window.location.href='listar.php';</script>;
-        }
-
-        $conn->close();
+    if (empty($nome) || empty($tipo) || empty($quantidade)) {
+        echo "<script>alert('Todos os campos são obrigatórios!'); window.history.back();</script>";
         exit;
     }
-    ?>
+
+    $sql = "UPDATE produtos SET produto='$nome', tipo='$tipo', quantidade=$quantidade WHERE id=$id";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "<script>alert('Produto atualizado com sucesso!'); window.location.href='listar.php';</script>";
+    } else {
+        echo "<script>alert('Erro ao atualizar o produto.'); window.location.href='listar.php';</script>";
+    }
+
+    $conn->close();
+    exit;
+}
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -66,6 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
         <option value="Eletrônico" <?php if($produto['tipo'] == 'Eletrônico') echo 'selected'; ?>>Eletrônico</option>
         <option value="Mecânico" <?php if($produto['tipo'] == 'Mecânico') echo 'selected'; ?>>Mecânico</option>
         <option value="Papelaria" <?php if($produto['tipo'] == 'Papelaria') echo 'selected'; ?>>Papelaria</option>
+        <option value="Alimento" <?php if($produto['tipo'] == 'Alimento') echo 'selected'; ?>>Alimento</option>
     </select>
 
     <label for="quantidade">Quantidade:</label>
@@ -81,4 +83,4 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 </div>
 
 </body>
-</html
+</html>
