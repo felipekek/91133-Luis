@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #2c2c2c; /* Cinza escuro */
+  }
+  
+  .navbar-container {
+    margin-bottom: 20px;
+  }
+  
+  .hero-section {
+    background-image: url('...'); /* Substitua com a imagem real */
+    background-size: cover;
+    background-position: center;
+    height: auto;
+    padding: 60px 20px;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+  }
+  
+  .services-section {
+    padding: 50px 0;
+  }
+  
+  .services-section h2 {
+    color: #ffffff; /* Define a cor do texto como branco */
+  }
+  
+  .card img {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .card-body {
+    text-align: center;
+  }
+  
+  .footer {
+    background-color: #f8f9fa;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .footer p {
+    margin: 0;
+  }
+  
+  .text-center {
+    margin-top: 20px;
+  }
+  
+  .btn-lg {
+    padding: 10px 20px;
+  }
+  
+  .carousel-container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .carousel-inner img {
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
