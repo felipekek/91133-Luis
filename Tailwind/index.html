@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script> 
-  <title>Lage Page com tailwindcss</title>
+  <title>Landing Page com TailwindCSS</title>
 </head>
+
 <body class="bg-gray-900 text-gray-100 font-sans">
 
   <header class="bg-gray-800 shadow">
@@ -18,40 +19,58 @@
     </nav>
   </header>
 
-  <main class="container mx-auto py-12 px-4 space-y-16">
+  <main class="container mx-auto py-12 px-4">
+    <div class="flex flex-col lg:flex-row justify-between gap-8">
 
-    <section>
-      <h2 class="text-3xl font-semibold mb-4 text-blue-400">Nossa História</h2>
-      <p class="text-gray-300 text-lg">Aqui vai um breve texto sobre a trajetória ou missão da empresa ou projeto.</p>
-    </section>
+      <section class="flex-1 bg-gray-800 p-6 rounded-lg shadow">
+        <h2 class="text-2xl font-semibold mb-4 text-blue-400">Nossa História</h2>
+        <p class="text-gray-300 text-base">A empresa foi fundada por Bob Esponja após perceber que fritar hambúrgueres não era o suficiente para sua genialidade.
+            Com Amendo Bobo e Bobo Amendo Bobo ao lado, transformou o absurdo em modelo de negócio — e tá dando certo (ninguém sabe como).</p>
+      </section>
 
-    <section>
-      <h2 class="text-3xl font-semibold mb-4 text-blue-400">Nossa Equipe</h2>
-      <img src="/Tailwind/img/equipe.jpg" alt="Equipe" class="w-full max-w-md rounded-lg shadow mx-auto">
-    </section>
+      <section class="flex-1 bg-gray-800 p-6 rounded-lg shadow text-center">
+        <h2 class="text-2xl font-semibold mb-4 text-blue-400">Nossa Equipe</h2>
+        <div class="relative w-full max-w-md mx-auto overflow-hidden rounded-lg shadow-lg">
+          <!-- Slides -->
+          <div id="carousel" class="flex transition-transform duration-500" style="transform: translateX(0%)">
+            <img src="/Tailwind/img/bob1.avif" class="w-full flex-shrink-0" alt="Equipe 1">
+            <img src="/Tailwind/img/bob5.jpg" class="w-full flex-shrink-0" alt="Equipe 2">
+            <img src="/Tailwind/img/bob4.webp" class="w-full flex-shrink-0" alt="Equipe 3">
+          </div>
 
-    <section>
-      <h2 class="text-3xl font-semibold mb-4 text-blue-400">Parceiros</h2>
-      <table class="w-full table-auto border border-gray-700 text-gray-200">
-        <thead class="bg-gray-700">
-          <tr>
-            <th class="px-4 py-2 border border-gray-600">Nome</th>
-            <th class="px-4 py-2 border border-gray-600">Setor</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="bg-gray-800">
-            <td class="px-4 py-2 border border-gray-700">Amendo Bobo</td>
-            <td class="px-4 py-2 border border-gray-700">Tecnologia</td>
-          </tr>
-          <tr class="bg-gray-800">
-            <td class="px-4 py-2 border border-gray-700">Bobo bobo Amendo Bobo</td>
-            <td class="px-4 py-2 border border-gray-700">Marketing</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-    
+          <!-- Botões -->
+          <button onclick="prevSlide()" class="absolute top-1/2 left-0 transform -translate-y-1/2 px-3 py-1 bg-gray-700 text-white hover:bg-gray-600">
+            ‹
+          </button>
+          <button onclick="nextSlide()" class="absolute top-1/2 right-0 transform -translate-y-1/2 px-3 py-1 bg-gray-700 text-white hover:bg-gray-600">
+            ›
+          </button>
+        </div>
+      </section>
+
+      <section class="flex-1 bg-gray-800 p-6 rounded-lg shadow overflow-x-auto">
+        <h2 class="text-2xl font-semibold mb-4 text-blue-400">Parceiros</h2>
+        <table class="w-full table-auto border border-gray-700 text-gray-200 text-sm">
+          <thead class="bg-gray-700">
+            <tr>
+              <th class="px-4 py-2 border border-gray-600">Nome</th>
+              <th class="px-4 py-2 border border-gray-600">Setor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="bg-gray-800">
+              <td class="px-4 py-2 border border-gray-700">Amendo Bobo</td>
+              <td class="px-4 py-2 border border-gray-700">Tecnologia</td>
+            </tr>
+            <tr class="bg-gray-800">
+              <td class="px-4 py-2 border border-gray-700">Bobo bobo Amendo Bobo</td>
+              <td class="px-4 py-2 border border-gray-700">Marketing</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+    </div>
   </main>
 
   <footer class="bg-gray-800 py-6 mt-12">
@@ -59,6 +78,27 @@
       &copy; 2025 Marca Genérica. Todos os direitos reservados.
     </div>
   </footer>
+
+  <script>
+    let currentSlide = 0;
+    const carousel = document.getElementById('carousel');
+    const totalSlides = carousel.children.length;
+
+    function updateSlide() {
+      const offset = -100 * currentSlide;
+      carousel.style.transform = `translateX(${offset}%)`;
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateSlide();
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      updateSlide();
+    }
+  </script>
 
 </body>
 </html>
