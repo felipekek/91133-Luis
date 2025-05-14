@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Adicionar Amigo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Adicionar Produto e Preço</h1>
+    <form method="post" onsubmit="event.preventDefault(); adicionarProduto();">
+        <input type="text" id="nome" placeholder="Nome do Produto" required>
+        <input type="number" step="0.01" id="preco" placeholder="Preço" required>
+        <button type="submit">Adicionar</button>
+    </form>
+    <a href="{{ url_for('listar') }}">Ver lista de produtos</a>
+</body>
+</html>
