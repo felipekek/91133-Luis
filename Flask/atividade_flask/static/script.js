@@ -15,7 +15,9 @@ function adicionarProduto() {
     .then(() => {
         document.getElementById('nome').value = '';
         document.getElementById('preco').value = '';
-        carregarLista();
+        if (document.getElementById('tabela-produtos')) {
+            carregarLista();
+        }
     });
 }
 
@@ -23,15 +25,23 @@ function carregarLista() {
     fetch('/api/listar')
     .then(res => res.json())
     .then(produtos => {
-        const lista = document.getElementById('lista-produtos');
-        lista.innerHTML = '';
+        const tabela = document.getElementById('tabela-produtos');
+        if (!tabela) return;
+        const tbody = tabela.querySelector('tbody');
+        tbody.innerHTML = '';
         produtos.forEach(produto => {
-            const item = document.createElement('li');
-            item.textContent = `${produto.nome} - R$ ${produto.preco}`;
-            lista.appendChild(item);
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${produto.nome}</td>
+                <td>R$ ${parseFloat(produto.preco).toFixed(2)}</td>
+            `;
+            tbody.appendChild(row);
         });
     });
 }
 
-// Carrega a lista quando a página abrir
-window.onload = carregarLista();
+window.onload = function() {
+    if (document.getElementById('tabela-produtos')) {
+        carregarLista();
+    }
+};

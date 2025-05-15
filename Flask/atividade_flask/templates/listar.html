@@ -2,19 +2,23 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Lista de Amigos</title>
+    <title>Lista de Produtos</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Amigos Cadastrados</h1>
-    <ul>
-        {% for amigo in amigos %}
-            <li>{{ amigo['nome'] }} - {{ amigo['email'] }}</li>
-        {% else %}
-            <li>Nenhum amigo cadastrado.</li>
-        {% endfor %}
-    </ul>
-    <ul id="lista-produtos"></ul>
-    <a href="{{ url_for('adicionar') }}">Adicionar novo amigo</a>
+    <h1>Produtos Cadastrados</h1>
+    <table id="tabela-produtos" border="1" style="margin: 0 auto;">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Preço</th>
+            </tr>
+        </thead>
+        <tbody>
+          
+        </tbody>
+    </table>
+    <a href="{{ url_for('adicionar') }}">Adicionar novo produto</a>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

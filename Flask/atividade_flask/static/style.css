@@ -36,3 +36,26 @@ li {
     font-size: 18px;
     color: #333;
 }
+
+table {
+    background: #fff;
+    border-collapse: collapse;
+    margin: 30px auto;
+    width: 60%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+th, td {
+    padding: 12px 18px;
+    border: 1px solid #c8e6c9;
+    font-size: 17px;
+}
+
+th {
+    background: #c8e6c9;
+    color: #222;
+}
+
+tr:nth-child(even) {
+    background: #f9fbe7;
+}
